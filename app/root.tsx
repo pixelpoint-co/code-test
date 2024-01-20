@@ -1,4 +1,5 @@
 import './tailwind.css'
+import './font.css'
 import {
   Links,
   LiveReload,
@@ -7,6 +8,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react'
+import { Toaster } from '@/components/ui/sonner'
 
 export default function App() {
   return (
@@ -15,10 +17,12 @@ export default function App() {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <Links />
       </head>
       <body suppressHydrationWarning>
         <Outlet />
+        <Toaster />
         <ScrollRestoration />
         <LiveReload />
         <Scripts />

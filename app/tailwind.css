@@ -2,166 +2,106 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css");
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
 
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-@font-face {
-	font-family: 'Pretendard Variable';
-	font-weight: 45 920;
-	font-style: normal;
-	font-display: swap;
-	src: url('./fonts/PretendardVariable.woff2') format('woff2-variations');
-}
+    --primary: 358 85% 52%;
+    --primary-foreground: 210 40% 98%;
 
-/* @font-face {
-  font-family: 'Pretendard';
-  src: local('Pretendard'), url(../public/font/Pretendard-Black.woff) format('woff');
-  font-weight: 900;
-}
-@font-face {
-  font-family: 'Pretendard';
-  src: local('Pretendard'), url(../public/font/Pretendard-ExtraBold.woff) format('woff');
-  font-weight: 800;
-}
-@font-face {
-  font-family: 'Pretendard';
-  src: local('Pretendard'), url(../public/font/Pretendard-Bold.woff) format('woff');
-  font-weight: 700;
-}
-@font-face {
-  font-family: 'Pretendard';
-  src: local('Pretendard'), url(../public/font/Pretendard-SemiBold.woff) format('woff');
-  font-weight: 600;
-}
-@font-face {
-  font-family: 'Pretendard';
-  src: local('Pretendard'), url(../public/font/Pretendard-Medium.woff) format('woff');
-  font-weight: 500;
-}
-@font-face {
-  font-family: 'Pretendard';
-  src: local('Pretendard'), url(../public/font/Pretendard-Regular.woff) format('woff');
-  font-weight: 400;
-}
-@font-face {
-  font-family: 'Pretendard';
-  src: local('Pretendard'), url(../public/font/Pretendard-Light.woff) format('woff');
-  font-weight: 300;
-}
-@font-face {
-  font-family: 'Pretendard';
-  src: local('Pretendard'), url(../public/font/Pretendard-ExtraLight.woff) format('woff');
-  font-weight: 200;
-}
-@font-face {
-  font-family: 'Pretendard';
-  src: local('Pretendard'), url(../public/font/Pretendard-Thin.woff) format('woff');
-  font-weight: 100;
-} */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-html {
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 24px;
-  height: 100%;
-}
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
-body {
-  height: 100%;
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  font-size: 22px;
-  line-height: 22px;
-  letter-spacing: 0px;
-  word-spacing: 0px;
-  margin: 0px;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-  &.no-scroll {
-    overflow-y: hidden;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
   }
 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
 
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-tap-highlight-color: transparent;
-}
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
 
-p, ul, ol, pre, table, blockquote {
-  margin-top: 0px;
-  margi-bottom: 0px;
-}
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
 
-ul ul, ol ol, ul ol, ol ul {
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
 
-ul {
-  list-style-type: none;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-  li {
-    display: inline;
-    margin: 0px;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
   }
 }
 
-#app {
-
-}
-
-#root {
-
-}
-
-#app {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  min-height: 100%;
-  height: 100%;
-}
-
-#root {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  min-height: 100%;
-  height: 100%;
-  width: 100%;
-}
-
-
-.ReactCollapse--collapse {
-  transition: height 250ms ease-in-out;
-}
-
-
-// toastify
-
-:root {
-  --toastify-toast-width: 480px;
-
-  .offcanvas {
-    /* --cui-offcanvas-zindex: 1; */
+@layer base {
+  * {
+    @apply tw-border-border;
   }
-}
-.Toastify__toast {
-  border-radius: 15px;
-  box-shadow: rgba(30, 30, 30, 0.3) 5px 5px 20px;
-}
-.Toastify__toast-body {
-  white-space: pre-line;
-}
-
-.ReactModal__Body--open {
-  overscroll-behavior: none;
+  @layer base {
+    html,
+    body {
+      font-family:
+        'Poppins',
+        'Pretendard Variable',
+        -apple-system,
+        BlinkMacSystemFont,
+        system-ui,
+        Roboto,
+        'Helvetica Neue',
+        'Segoe UI',
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol',
+        sans-serif;
+      box-sizing: border-box;
+      height: 100%;
+      letter-spacing: 0px;
+      word-spacing: 0px;
+      margin: 0px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    @font-face {
+      font-family: 'Pretendard Variable';
+      font-weight: 45 920;
+      font-display: swap;
+      unicode-range: U+AC00-D7A3;
+    }
+    body {
+      @apply tw-bg-background tw-text-foreground;
+    }
+  }
 }
