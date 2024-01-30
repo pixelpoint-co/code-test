@@ -15,12 +15,20 @@ export default function App() {
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        />
         <Meta />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.googleapis.com"
+        />
         <Links />
       </head>
-      <body suppressHydrationWarning>
+      <body
+        suppressHydrationWarning
+      >
         <Outlet />
         <Toaster />
         <ScrollRestoration />

@@ -5,20 +5,48 @@ import {
   Outlet,
 } from '@remix-run/react'
 import clsx from 'clsx'
+import ogSrc from '~/assets/images/logo-og.png'
 import Icon from '~/components/atoms/Icon'
-import logoSrc from '~/components/atoms/Icon/icons/logo-wordmark-dotless.svg'
 
 export const meta: MetaFunction =
-  () => {
+  ({
+    location,
+  }) => {
+    const {
+      pathname,
+    } = location
     return [
       {
         title:
-          'Pixel Point',
+          'Pixel Point: Cloud-first software product development agency',
       },
       {
         name: 'description',
         content:
-          'Cloud-first web & mobile product development agency',
+          'Pixel Point builds for a better experience, a robust product, and a smooth operation. It provides cloud-first infrastructure for business owners to start shipping products with world-class standards.',
+      },
+      {
+        property:
+          'og:title',
+        content:
+          'Pixel Point: Cloud-first software product development agency',
+      },
+      {
+        property:
+          'og:description',
+        content:
+          'Pixel Point builds for a better experience, a robust product, and a smooth operation. It provides cloud-first infrastructure for business owners to start shipping products with world-class standards.',
+      },
+      {
+        property:
+          'og:url',
+        content: `https//www.pixelpoint.co${pathname}`,
+      },
+      {
+        property:
+          'og:image',
+        content:
+          ogSrc,
       },
     ]
   }

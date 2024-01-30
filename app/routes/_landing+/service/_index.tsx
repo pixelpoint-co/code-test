@@ -9,6 +9,52 @@ import {
 import clsx from 'clsx'
 import Divider from '~/components/atoms/Divider'
 import { db } from '~/utils/db.server'
+
+export const meta: MetaFunction =
+  ({
+    location,
+    ...others
+  }) => {
+    console.log(
+      location,
+      others,
+    )
+    return [
+      {
+        title:
+          'Pixel Point',
+      },
+      {
+        name: 'description',
+        content:
+          'Cloud-first web & mobile product development agency',
+      },
+      {
+        property:
+          'og:title',
+        content:
+          'Pixel Point',
+      },
+      {
+        property:
+          'og:description',
+        content:
+          'Cloud-first web & mobile product development agency',
+      },
+      {
+        property:
+          'og:type',
+        content:
+          'website',
+      },
+      {
+        property:
+          'og:url',
+        content:
+          'Cloud-first web & mobile product development agency',
+      },
+    ]
+  }
 const data = [
   {
     title: 'Beta',
