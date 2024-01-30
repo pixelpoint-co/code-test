@@ -8,40 +8,62 @@ import WordMarkLogo from './icons/logo-wordmark.svg?react'
 import WordMarkDotlessLogo from './icons/logo-wordmark-dotless.svg?react'
 
 const ReactIcons = {
-  wmLogo: WordMarkLogo,
-  wmDotlessLogo: WordMarkDotlessLogo,
+  wmLogo:
+    WordMarkLogo,
+  wmDotlessLogo:
+    WordMarkDotlessLogo,
   logo: Logo,
-  symbolLogo: SymbolLogo,
+  symbolLogo:
+    SymbolLogo,
 }
 
-interface IconProps extends React.ComponentProps<'svg'> {
+interface IconProps
+  extends React.ComponentProps<'svg'> {
   icon: string
-  width: number | string
-  height: number | string
-  size: number | string
+  width:
+    | number
+    | string
+  height:
+    | number
+    | string
+  size:
+    | number
+    | string
   className?: string
   alt: string
 }
 
-const Icon = (props: IconProps) => {
-  const { icon, width, size, className, ...others } = props
-  const ReactIcon = ReactIcons[icon]
-  console.log(ReactIcon)
-  console.log(className)
-  console.log(
-    clsx(`tw-w-[${width || size || 24}px]`, 'tw-inline-block ' + 'tw-h-full'),
+const Icon = (
+  props: IconProps,
+) => {
+  const {
+    icon,
+    width,
+    size,
     className,
-  )
+    ...others
+  } = props
+  const ReactIcon =
+    ReactIcons[icon]
+
   return (
     <span
       className={twMerge(
-        clsx(`tw-w-[${width || size || 24}px]`, 'tw-inline-block', 'tw-h-full'),
+        clsx(
+          `w-[${
+            width ||
+            size ||
+            24
+          }px]`,
+          'inline-block',
+          'h-full',
+        ),
         className,
       )}
     >
       {ReactIcon && (
         <ReactIcon
-          className="tw-h-full tw-w-full tw-fill-current"
+          className="h-full w-full fill-current"
           {...others}
         />
       )}
@@ -50,18 +72,36 @@ const Icon = (props: IconProps) => {
 }
 
 Icon.propTypes = {
-  icon: PropTypes.string.isRequired,
-  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  rotateDeg: PropTypes.number,
+  icon: PropTypes
+    .string
+    .isRequired,
+  height:
+    PropTypes.oneOfType(
+      [
+        PropTypes.number,
+        PropTypes.string,
+      ],
+    ),
+  width:
+    PropTypes.oneOfType(
+      [
+        PropTypes.number,
+        PropTypes.string,
+      ],
+    ),
+  size: PropTypes.oneOfType(
+    [
+      PropTypes.number,
+      PropTypes.string,
+    ],
+  ),
 }
 
-Icon.defaultProps = {
-  height: 24,
-  width: 24,
-  size: null,
-  rotateDeg: 0,
-}
+Icon.defaultProps =
+  {
+    height: 24,
+    width: 24,
+    size: null,
+  }
 
 export default Icon

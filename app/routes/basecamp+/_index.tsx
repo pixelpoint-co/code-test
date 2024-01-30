@@ -1,12 +1,8 @@
 import { useMediaQuery } from 'react-responsive'
 import type { MetaFunction } from '@remix-run/node'
-import {
-  NavLink,
-  Outlet,
-} from '@remix-run/react'
+import { NavLink } from '@remix-run/react'
 import clsx from 'clsx'
 import Icon from '~/components/atoms/Icon'
-import logoSrc from '~/components/atoms/Icon/icons/logo-wordmark-dotless.svg'
 
 export const meta: MetaFunction =
   () => {
@@ -100,18 +96,3 @@ export default function Index() {
     </div>
   )
 }
-
-// orange-400
-// ==
-// orange-primary
-
-// brand-primary
-// brand-secondary
-
-// bg-red: #fcfcfc
-// bg-gray: #fcfcfc
-// bg-gray: #fcfcfc
-
-// blue-50 - 950
-// orange-50 - 950
-// gray 50 - 950

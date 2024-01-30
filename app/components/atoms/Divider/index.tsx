@@ -3,7 +3,9 @@ import clsx from 'clsx'
 import PropTypes from 'prop-types'
 import { twMerge } from '~/utils/twMerge'
 
-const Divider = props => {
+const Divider = (
+  props,
+) => {
   const {
     className,
     verticalMargin,
@@ -16,46 +18,68 @@ const Divider = props => {
     <div
       className={twMerge(
         clsx(
-          `tw-mx-[${horizontalMargin}px]`,
-          `tw-my-[${verticalMargin}px]`,
+          `mx-[${horizontalMargin}px]`,
+          `my-[${verticalMargin}px]`,
           '',
         ),
         className,
       )}
       style={{
         margin: `${verticalMargin}px ${horizontalMargin}px`,
-        ...(direction === 'horizontal'
+        ...(direction ===
+        'horizontal'
           ? {
-              height: width,
-              minHeight: width,
-              width: size,
-              minWidth: size,
+              height:
+                width,
+              minHeight:
+                width,
+              width:
+                size,
+              minWidth:
+                size,
             }
           : {
               width,
-              minWidth: width,
-              minHeight: size,
-              height: size,
+              minWidth:
+                width,
+              minHeight:
+                size,
+              height:
+                size,
             }),
       }}
     />
   )
 }
 
-Divider.defaultProps = {
-  verticalMargin: 0,
-  horizontalMargin: 0,
-  size: '100%',
-  width: 2,
-  direction: 'horizontal',
-}
+Divider.defaultProps =
+  {
+    verticalMargin: 0,
+    horizontalMargin: 0,
+    size: '100%',
+    width: 2,
+    direction:
+      'horizontal',
+  }
 
-Divider.propTypes = {
-  verticalMargin: PropTypes.number,
-  horizontalMargin: PropTypes.number,
-  size: PropTypes.number,
-  width: PropTypes.number,
-  direction: PropTypes.oneOf(['horizontal', 'vertical']),
-}
+Divider.propTypes =
+  {
+    verticalMargin:
+      PropTypes.number,
+    horizontalMargin:
+      PropTypes.number,
+    size: PropTypes.number,
+    width:
+      PropTypes.number,
+    direction:
+      PropTypes.oneOf(
+        [
+          'horizontal',
+          'vertical',
+        ],
+      ),
+  }
 
-export default React.memo(Divider)
+export default React.memo(
+  Divider,
+)
