@@ -19,9 +19,9 @@ export const meta: MetaFunction =
     ]
   }
 export default function Index() {
-  const isTablet =
+  const isMobile =
     useMediaQuery({
-      query: `(min-width: 700px)`,
+      query: `(max-width: 700px)`,
     })
   return (
     <div className="flex min-h-full flex-1 flex-col">
@@ -33,7 +33,7 @@ export default function Index() {
             'font-bold',
 
             'tablet:mt-24',
-            'tablet:text-6xl',
+            'tablet:text-7xl',
 
             'laptop:mt-15',
             'laptop:text-9xl',
@@ -77,16 +77,16 @@ export default function Index() {
               )}
             >
               Let's
-              Chat
+              Talk
             </NavLink>
           </li>
         </ul>
         <div className="mt-auto w-full overflow-hidden">
           <Icon
             icon={
-              isTablet
-                ? 'wmLogo'
-                : 'logo'
+              isMobile
+                ? 'logo'
+                : 'wmLogo'
             }
             alt="Pixel Point Wordmark Logo"
             className="block w-full text-gray-100/50"

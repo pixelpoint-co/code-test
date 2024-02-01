@@ -37,15 +37,15 @@ const Icon = (
   props: IconProps,
 ) => {
   const {
-    icon,
-    width,
-    size,
+    icon = '',
+    width = 24,
+    size = null,
     className,
     ...others
   } = props
   const ReactIcon =
     ReactIcons[icon]
-
+  console.log(icon)
   return (
     <span
       className={twMerge(
@@ -96,12 +96,5 @@ Icon.propTypes = {
     ],
   ),
 }
-
-Icon.defaultProps =
-  {
-    height: 24,
-    width: 24,
-    size: null,
-  }
 
 export default Icon

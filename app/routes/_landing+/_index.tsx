@@ -1,4 +1,6 @@
+import React from 'react'
 import { useMediaQuery } from 'react-responsive'
+import { TypeAnimation } from 'react-type-animation'
 import type { MetaFunction } from '@remix-run/node'
 import {
   NavLink,
@@ -7,7 +9,9 @@ import {
 import clsx from 'clsx'
 import ogSrc from '~/assets/images/logo-og.png'
 import Icon from '~/components/atoms/Icon'
-
+console.log(
+  React.version,
+)
 export const meta: MetaFunction =
   ({
     location,
@@ -51,9 +55,9 @@ export const meta: MetaFunction =
     ]
   }
 export default function Index() {
-  const isTablet =
+  const isMobile =
     useMediaQuery({
-      query: `(min-width: 700px)`,
+      query: `(max-width: 700px)`,
     })
   return (
     <div className="flex min-h-full flex-1 flex-col">
@@ -65,16 +69,47 @@ export default function Index() {
             'font-bold',
 
             'tablet:mt-24',
-            'tablet:text-6xl',
+            'tablet:text-8xl',
 
             'laptop:mt-15',
             'laptop:text-9xl',
           )}
         >
           A Better
-          Experience.
+          <br />
+          <TypeAnimation
+            preRenderFirstString={
+              true
+            }
+            cursor={
+              false
+            }
+            className={
+              ''
+            }
+            sequence={[
+              'Experience',
+              2500,
+              'Product',
+              2500,
+              'Business',
+              2500,
+            ]}
+            speed={
+              40
+            }
+            deletionSpeed={
+              60
+            }
+            repeat={
+              Infinity
+            }
+          />
+          <span className="font-semibold -ml-1.5">
+            _
+          </span>
         </h1>
-        <ul className="mt-15 laptop:gap-8 flex flex-col gap-5">
+        <ul className="mt-15 laptop:gap-8 flex flex-col gap-5 tablet:gap-6">
           <li>
             <NavLink
               to="/service"
@@ -83,6 +118,7 @@ export default function Index() {
               }) =>
                 clsx(
                   'text-2xl',
+                  'tablet:text-3xl',
                   'laptop:text-4xl',
                   'hover:underline',
                   'active:underline',
@@ -103,22 +139,23 @@ export default function Index() {
               target="_blank"
               className={clsx(
                 'text-2xl',
+                'tablet:text-3xl',
                 'laptop:text-4xl',
                 'hover:underline',
                 'active:underline',
               )}
             >
               Let's
-              Chat
+              Talk
             </NavLink>
           </li>
         </ul>
         <div className="mt-auto w-full overflow-hidden">
           <Icon
             icon={
-              isTablet
-                ? 'wmLogo'
-                : 'logo'
+              isMobile
+                ? 'logo'
+                : 'wmLogo'
             }
             alt="Pixel Point Wordmark Logo"
             className="block w-full text-gray-100/50"

@@ -1,5 +1,6 @@
 import {
   json,
+  type MetaFunction,
   redirect,
 } from '@remix-run/node'
 import {
@@ -7,9 +8,8 @@ import {
   useLoaderData,
 } from '@remix-run/react'
 import clsx from 'clsx'
+import ogSrc from '~/assets/images/service-og.gif'
 import Divider from '~/components/atoms/Divider'
-import { db } from '~/utils/db.server'
-
 export const meta: MetaFunction =
   ({
     location,
@@ -53,8 +53,15 @@ export const meta: MetaFunction =
         content:
           'Cloud-first web & mobile product development agency',
       },
+      {
+        property:
+          'og:image',
+        content:
+          ogSrc,
+      },
     ]
   }
+
 const data = [
   {
     title: 'Beta',
@@ -295,7 +302,7 @@ export default function Service() {
                     >
                       <span
                         className={clsx(
-                          'font-bold text-gray-300',
+                          'font-bold text-gray-500 text-lg',
                         )}
                       >
                         {
@@ -323,7 +330,7 @@ export default function Service() {
                               >
                                 <div
                                   className={clsx(
-                                    'flex-0 flex pr-2.5 text-gray-300',
+                                    'flex-0 flex pr-2.5 text-gray-500',
                                   )}
                                 >
                                   -

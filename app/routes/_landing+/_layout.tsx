@@ -9,9 +9,9 @@ import clsx from 'clsx'
 import Divider from '~/components/atoms/Divider'
 import Icon from '~/components/atoms/Icon'
 export default function Index() {
-  const isTablet =
+  const isMobile =
     useMediaQuery({
-      query: `(min-width: 700px)`,
+      query: `(max-width: 700px)`,
     })
 
   const location =
@@ -152,9 +152,9 @@ export default function Index() {
             </div>
             <Icon
               icon={
-                isTablet
-                  ? 'wmLogo'
-                  : 'logo'
+                isMobile
+                  ? 'logo'
+                  : 'wmLogo'
               }
               alt="Pixel Point Wordmark Logo"
               className="mt-60 block w-full text-primary"

@@ -8,11 +8,11 @@ const Divider = (
 ) => {
   const {
     className,
-    verticalMargin,
-    horizontalMargin,
-    size,
-    width,
-    direction,
+    verticalMargin = 0,
+    horizontalMargin = 0,
+    size = '100%',
+    width = 2,
+    direction = 'horizontal',
   } = props
   return (
     <div
@@ -51,16 +51,6 @@ const Divider = (
     />
   )
 }
-
-Divider.defaultProps =
-  {
-    verticalMargin: 0,
-    horizontalMargin: 0,
-    size: '100%',
-    width: 2,
-    direction:
-      'horizontal',
-  }
 
 Divider.propTypes =
   {
