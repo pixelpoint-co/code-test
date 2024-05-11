@@ -61,7 +61,7 @@ export default function Index() {
     })
   return (
     <div className="flex min-h-full flex-1 flex-col">
-      <div className="laptop:px-14 flex flex-1 flex-col px-5">
+      <div className="flex flex-1 flex-col px-5 laptop:px-14">
         <h1
           className={clsx(
             'mt-18',
@@ -105,11 +105,11 @@ export default function Index() {
               Infinity
             }
           />
-          <span className="font-semibold -ml-1.5">
+          <span className="-ml-1.5 font-semibold">
             _
           </span>
         </h1>
-        <ul className="mt-15 laptop:gap-8 flex flex-col gap-5 tablet:gap-6">
+        <ul className="mt-15 flex flex-col gap-5 tablet:gap-6 laptop:gap-8">
           <li>
             <NavLink
               to="/service"
